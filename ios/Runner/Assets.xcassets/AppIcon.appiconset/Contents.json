@@ -1,0 +1,350 @@
+{
+  "images" : [
+    {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-20x20@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-20x20@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-29x29@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-29x29@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-29x29@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-40x40@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-40x40@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-60x60@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "60x60",
+      "idiom" : "iphone",
+      "filename" : "Icon-App-60x60@3x.png",
+      "scale" : "3x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-20x20@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "20x20",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-20x20@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-29x29@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-29x29@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-40x40@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "40x40",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-40x40@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-76x76@1x.png",
+      "scale" : "1x"
+    },
+    {
+      "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-76x76@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "83.5x83.5",
+      "idiom" : "ipad",
+      "filename" : "Icon-App-83.5x83.5@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "Icon-App-1024x1024@1x.png",
+      "scale" : "1x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}
+//HomePage
+
+//import 'package:database_crud/databseDemo/MyDatabase.dart';
+//import 'package:flutter/material.dart';
+//import 'add_user.dart';
+//
+//class HomePage extends StatefulWidget {
+//const HomePage({super.key});
+//
+//@override
+//State<HomePage> createState() => _HomePageState();
+//}
+//
+//class _HomePageState extends State<HomePage> {
+//MyDatabase db = MyDatabase();
+//
+//@override
+//Widget build(BuildContext context) {
+//return Scaffold(
+//appBar: AppBar(title: Text("Database"),actions: [
+//InkWell(
+//onTap: () async {
+//await  Navigator.push(context, MaterialPageRoute(
+//builder: (context) {
+//return InsertStudent();
+//},
+//)).then((value) {
+//if (value == true) {
+//setState(() {});
+//}
+//});
+//},
+//child: Container(
+//child: Icon(Icons.add),
+//margin: EdgeInsets.only(right: 10),height: 20
+//),
+//)
+//],),
+//body: FutureBuilder(
+//future: db.getAllUser(),
+//builder: (context, snapshot2) {
+//if (snapshot2.hasData) {
+//return FutureBuilder(
+//future: db.getAllUser(),
+//builder: (context, snapshot) {
+//if (snapshot.hasData) {
+//return ListView.builder(
+//itemCount: snapshot.data!.length,
+//itemBuilder: (context, index) {
+//return Padding(
+//padding: const EdgeInsets.all(8.0),
+//child: ListTile(
+//onTap: () {
+//Navigator.push(context, MaterialPageRoute(builder: (context){
+//return InsertStudent(map: snapshot.data![index],);
+//},)).then((value) {
+//setState(() {
+//
+//});
+//});
+//},
+//tileColor: Colors.grey,
+//title: Column(
+//crossAxisAlignment: CrossAxisAlignment.start,
+//children: [
+//Text(snapshot.data![index]["name"].toString(),
+//style: TextStyle(fontSize: 25)),
+//Text(snapshot.data![index]["email"].toString())
+//],
+//),
+//trailing: IconButton(
+//onPressed: () {
+//db.deleteData(int.parse(snapshot.data![index]
+//['studentID']
+//.toString()))
+//.then((value) {
+//setState(() {});
+//});
+//},
+//icon: Icon(Icons.delete),
+//),
+//),
+//);
+//},
+//);
+//} else {
+//return Center(child: Text("Data not found"),);
+//}
+//},
+//);
+//} else {
+//return Center(
+//child: CircularProgressIndicator(),
+//);
+//}
+//},
+//),
+//);
+//}
+//}
+
+//InsertStudent
+
+// import 'package:database_crud/databseDemo/MyDatabase.dart';
+// import 'package:flutter/material.dart';
+//
+//
+// class InsertStudent extends StatefulWidget {
+//   InsertStudent({super.key, this.map});
+//
+//   Map? map;
+//
+//   @override
+//   State<InsertStudent> createState() => _InsertStudentState();
+// }
+//
+// class _InsertStudentState extends State<InsertStudent> {
+//   TextEditingController nameController = TextEditingController();
+//   TextEditingController emailController = TextEditingController();
+//   MyDatabase db = MyDatabase();
+//
+//   @override
+//   void initState() {
+//     super.initState();
+//     nameController.text =
+//     widget.map?['name'] == null ? "" : widget.map!['name'];
+//     emailController.text = widget.map?['email'] == null ? "" : widget.map!['email'].toString();
+//   }
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Text("Insert Data"),
+//       ),
+//       body: Column(
+//         children: [
+//           TextFormField(
+//             controller: nameController,
+//             decoration: InputDecoration(hintText: "Name"),
+//           ),
+//           TextFormField(
+//             controller: emailController,
+//             decoration: InputDecoration(hintText: "email"),
+//           ),
+//           ElevatedButton(
+//               onPressed: () {
+//                 if (widget.map == null) {
+//                   db.insertData(
+//                       name: nameController.text, email: emailController.text)
+//                       .then((value) {
+//                     Navigator.of(context).pop(true);
+//                   });
+//                 } else {
+//                   db.updateData(
+//                       name: nameController.text,
+//                       email: emailController.text,
+//                       id: widget.map!['studentID'])
+//                       .then((value) {
+//                     Navigator.pop(context);
+//                   });
+//                 }
+//               },
+//               child: Text("Submit"))
+//         ],
+//       ),
+//     );
+//   }
+// }
+
+//MyDatabase
+
+// import 'dart:io';
+// import 'package:path/path.dart';
+// import 'package:flutter/services.dart';
+// import 'package:path_provider/path_provider.dart';
+// import 'package:sqflite/sqflite.dart';
+//
+// class MyDatabase {
+//   static const String TB_NAME = "Student";
+//
+//   Future<Database> initDatabase() async {
+//     String databasePath = await getDatabasesPath();
+//     Database database = await openDatabase(
+//       "${databasePath}/my_database.db",
+//       version: 1,
+//       onUpgrade: (db, oldVersion, newVersion) {},
+//       onCreate: (db, version) {
+//         db.execute(
+//             "CREATE TABLE Student(studentID INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,email TEXT");
+//       },
+//     );
+//     return database;
+//   }
+//
+//   Future<List<Map<String, Object?>>> getAllUser() async {
+//     Database db = await initDatabase();
+//     List<Map<String, dynamic>> list =
+//         await db.rawQuery("SELECT * FROM Student");
+//
+//     return list;
+//   }
+//
+//   Future<int> deleteData(int id) async {
+//     Database db = await initDatabase();
+//     var data = db.delete("$TB_NAME", where: "studentID=?", whereArgs: [id]);
+//     return data;
+//   }
+//
+//   Future<int> insertData({name, email}) async {
+//     Database db = await initDatabase();
+//     Map<String, Object?> map = {};
+//     map['name'] = name;
+//     map['email'] = email;
+//     var data = db.insert(TB_NAME, map);
+//     return data;
+//   }
+//
+//   Future<int> updateData({name, email, id}) async {
+//     Database db = await initDatabase();
+//     Map<String, Object?> map = {};
+//     map['name'] = name;
+//     map['email'] = email;
+//     var data =
+//         db.update("$TB_NAME", map, where: "studentID=?", whereArgs: [id]);
+//     return data;
+//   }
+// }
